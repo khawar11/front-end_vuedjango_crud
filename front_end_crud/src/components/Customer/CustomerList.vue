@@ -31,7 +31,8 @@
             </tr>
         </tbody>
     </table>
-    <DeleteCustomer ref="deleteCustomer" :customerToDelete="customerToDelete" @delete-customer="deleteCustomer"></DeleteCustomer>
+    <DeleteCustomer ref="deleteCustomer" :customerToDelete="customerToDelete" @delete-customer-success="handleDeleteSuccess"></DeleteCustomer>
+    <!-- <DeleteCustomer ref="deleteCustomer" :customerToDelete="customerToDelete" @delete-customer="deleteCustomer"></DeleteCustomer> -->
     <!-- Include the EditCustomer component for editing customers -->
     <EditCustomer ref="editCustomer" :customerData="editedCustomer" @customer-updated="updateCustomerList" @update-customer-data="updateEditedCustomer"></EditCustomer>
 </div>
@@ -91,8 +92,7 @@ export default {
             this.getCsrfToken().then((csrfToken) => {
                 if (csrfToken) {
                     this.$refs.deleteCustomer.cancelDelete();
-                    // console.log('Deleting customer with ID:', customerId);
-                    // console.log('Customer List before deletion:', this.customerList);
+                    console.log('Deleting customer with ID:', customerId);
 
                     axios
                         .delete(`http://127.0.0.1:8000/delete-customer/${customerId}/`, {
@@ -122,6 +122,16 @@ export default {
                     );
                 }
             });
+        },
+        handleDeleteSuccess() {
+            // Refresh the customer list after a successful delete
+            axios.get('http://127.0.0.1:8000/add-customer/')
+                .then((response) => {
+                    this.customerList = response.data;
+                })
+                .catch((error) => {
+                    console.error('Error fetching customer data:', error);
+                });
         },
         openEditModal(customer) {
             this.editedCustomer = {
@@ -164,19 +174,6 @@ export default {
 </script>
 
 <style scoped>
-/**
- * Vue class for '.cursor-pointer'.
- *
- * Summary:
- * The '.cursor-pointer' class is used to change the cursor to a pointer when hovering over an element.
- *
- * Example Usage:
- * <i class="fa fa-pencil fa-lg cursor-pointer"></i>
- *
- * Code Analysis:
- * The main functionality of the '.cursor-pointer' class is to change the cursor style to a pointer when hovering over an element.
- * This provides a visual indication to the user that the element is clickable or interactive.
- */
 .cursor-pointer {
     cursor: pointer;
 }

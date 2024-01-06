@@ -20,10 +20,9 @@
 </main>
 <Footer />
 </template>
-
 <script>
-import Header from '../components/base/header.vue';
-import Footer from '../components/base/footer.vue';
+import Header from '../components/base/Header.vue';
+import Footer from '../components/base/Footer.vue';
 import CustomerList from '../components/Customer/CustomerList.vue'
 import AddCustomer from '../components/Customer/AddCustomer.vue'
 export default {

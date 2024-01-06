@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CustomerView from '../views/CustomerView.vue'
 import SigninView from '../views/SigninView.vue'
 import SignupView from '../views/SignupView.vue'
+import ContactUs from '../views/ContactUs.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/signup',
       name: 'signup',
       component: SignupView
+    },
+    {
+      path: '/contactus',
+      name: 'contactus',
+      component: ContactUs
     },
   ]
 })

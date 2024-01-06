@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import Header from '../components/base/header.vue';
-import Footer from '../components/base/footer.vue';
+import Header from '../components/base/Header.vue';
+import Footer from '../components/base/Footer.vue';
 import { ref } from 'vue';
 import axios from 'axios';
 import router from '@/router'

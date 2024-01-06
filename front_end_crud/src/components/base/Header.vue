@@ -13,6 +13,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Customer">Customer Overview</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contactus">Contact Us</a>
+                    </li>
                 </ul>
             </div>
         </div>
