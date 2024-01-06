@@ -1,13 +1,33 @@
-Project Title: Vue.js Django Customer Management App
+# front_end_crud
 
-Description:
-The Vue.js Django Customer Management App is a web application designed to streamline customer management for your business. 
-It seamlessly integrates the powerful backend capabilities of Django with the dynamic and interactive frontend of Vue.js.
+This template should help get you started developing with Vue 3 in Vite.
 
-Key Features:
+## Recommended IDE Setup
 
-User Authentication: The app provides a secure and user-friendly sign-in and sign-up system, ensuring that only authorized users can access and manage customer data.
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-Customer List Overview: Easily access and view your list of customers, allowing you to get a quick overview of your customer base.
+## Back-end IDE Setup
 
-Customer Operations: Perform essential customer operations such as adding new customers, editing existing customer details, and removing customers from your database.
+[PyCharm](https://www.jetbrains.com/pycharm/) + [MySql](https://www.mysql.com/)
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
